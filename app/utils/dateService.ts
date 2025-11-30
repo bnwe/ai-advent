@@ -10,8 +10,13 @@ export interface DateService {
 }
 
 /**
- * Gets the current system date.
+ * Gets the current system date, or a test date if NEXT_PUBLIC_TEST_DATE is set.
  * Handles invalid system dates by returning a safe fallback.
+ * 
+ * Environment variable:
+ * - NEXT_PUBLIC_TEST_DATE: Optional ISO date string (YYYY-MM-DD) for testing.
+ *   If set, this date is used instead of the actual current date.
+ *   If empty or invalid, the actual current date is used.
  * 
  * @returns Current Date object, or a date far in the past if system date is invalid
  * 
@@ -19,6 +24,22 @@ export interface DateService {
  */
 export function getCurrentDate(): Date {
   try {
+    // Check if a test date is provided via environment variable
+    const testDateStr = typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_TEST_DATE;
+    
+    if (testDateStr && typeof testDateStr === 'string' && testDateStr.trim()) {
+      const testDate = new Date(testDateStr);
+      
+      // Validate the test date is valid
+      if (!isNaN(testDate.getTime())) {
+        return testDate;
+      }
+      
+      // If test date is invalid, log warning and fall through to current date
+      console.warn(`Invalid NEXT_PUBLIC_TEST_DATE format: "${testDateStr}". Using current date instead.`);
+    }
+    
+    // Use actual current date
     const date = new Date();
     
     // Validate the date is valid
@@ -68,10 +89,7 @@ export function isDoorUnlocked(doorDay: number, currentDate: Date): boolean {
     return false;
   }
 
-  // Check if date checking is disabled via environment variable
-  if (typeof process !== 'undefined' && process.env?.NEXT_PUBLIC_DISABLE_DATE_CHECK === 'true') {
-    return true;
-  }
+
 
   const currentMonth = currentDate.getMonth(); // 0-indexed (0 = January, 11 = December)
   const currentYear = currentDate.getFullYear();
