@@ -141,7 +141,7 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
 
           {/* Image (if provided and not errored) */}
           {content.imageUrl && !imageError && (
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+            <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
               <Image
                 src={content.imageUrl}
                 alt={`Day ${content.day} - ${content.title}`}
