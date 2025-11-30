@@ -105,7 +105,7 @@ export default function Calendar({ doors }: Readonly<CalendarProps>) {
           style={{
             textShadow: '4px 4px 0px rgba(0, 0, 0, 1)',
           }}>
-          ★ 2025 ★
+          ★ Weihnachtliche Fun Facts 2025 ★
         </div>
         <div className="flex justify-center items-center gap-6 mt-6">
           <div className="retro-star-simple w-12 h-12">
