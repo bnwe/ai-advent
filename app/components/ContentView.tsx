@@ -52,6 +52,11 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
   useEffect(() => {
     if (!isOpen) return;
 
+    // Scroll modal content to top
+    if (modalRef.current) {
+      modalRef.current.scrollTop = 0;
+    }
+
     // Focus the close button when modal opens
     if (closeButtonRef.current) {
       closeButtonRef.current.focus();
