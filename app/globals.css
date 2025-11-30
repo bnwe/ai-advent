@@ -1,25 +1,27 @@
 @import "tailwindcss";
 
-/* Retro Gaming Theme - Inspired by Super Mario */
+/* Retro Gaming Theme - Inspired by Super Tux */
 :root {
-  /* Primary retro gaming colors */
-  --color-primary: #FF6B6B;      /* Bright red */
-  --color-secondary: #4ECDC4;    /* Turquoise */
-  --color-accent: #FFE66D;       /* Yellow */
-  --color-success: #95E1D3;      /* Mint green */
-  --color-background: #2C3E50;   /* Dark blue-gray */
-  --color-locked: #7F8C8D;       /* Gray */
+  /* Super Tux inspired icy colors */
+  --color-primary: #00A8E8;      /* Bright ice blue */
+  --color-secondary: #FFD700;    /* Golden yellow */
+  --color-accent: #FF6B9D;       /* Pink/magenta */
+  --color-success: #00FF88;      /* Bright green */
+  --color-background: #1a1a2e;   /* Deep dark blue */
+  --color-locked: #4a5568;       /* Cool gray */
   
   /* Additional festive colors */
-  --color-festive-red: #E74C3C;
-  --color-festive-green: #2ECC71;
-  --color-festive-gold: #F39C12;
+  --color-festive-red: #FF3366;
+  --color-festive-green: #00FF88;
+  --color-festive-gold: #FFD700;
+  --color-ice: #B8E6F5;
+  --color-snow: #FFFFFF;
   
   /* UI colors */
-  --background: #2C3E50;
-  --foreground: #ECF0F1;
-  --card-bg: #34495E;
-  --card-hover: #3E5771;
+  --background: #1a1a2e;
+  --foreground: #FFFFFF;
+  --card-bg: #16213e;
+  --card-hover: #0f3460;
 }
 
 @theme inline {
@@ -53,15 +55,148 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Pixel art style text rendering */
+.pixel-text {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  font-family: 'Courier New', 'Courier', monospace;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    3px 3px 0px rgba(0, 0, 0, 1),
+    -1px -1px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* Extra pixelated for headers */
+.pixel-header {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  font-family: 'Courier New', 'Courier', monospace;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    4px 4px 0px rgba(0, 0, 0, 1),
+    -2px -2px 0px rgba(255, 255, 255, 0.4),
+    0 0 20px currentColor;
+}
+
+/* Retro gaming border style */
+.retro-border {
+  border: 4px solid;
+  border-image: repeating-linear-gradient(
+    45deg,
+    currentColor 0,
+    currentColor 10px,
+    transparent 10px,
+    transparent 20px
+  ) 4;
+  box-shadow: 
+    0 0 0 2px var(--background),
+    0 0 0 6px currentColor,
+    4px 4px 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Pixel perfect grid pattern */
+.pixel-grid {
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255, 255, 255, 0.03) 4px, rgba(255, 255, 255, 0.03) 8px),
+    repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255, 255, 255, 0.03) 4px, rgba(255, 255, 255, 0.03) 8px);
+}
+
+/* 8-bit style corners */
+.pixel-corners {
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
 }
 
 /* Utility classes for retro gaming theme */
 .retro-shadow {
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    4px 4px 0px rgba(0, 0, 0, 0.5),
+    8px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.retro-border {
-  border: 3px solid currentColor;
+.retro-box {
+  border: 4px solid currentColor;
+  box-shadow: 
+    inset -2px -2px 0px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 0px rgba(255, 255, 255, 0.3),
+    4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Snowflake animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg) translateZ(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(100px) rotate(360deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@keyframes snowfall-left {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg) translateZ(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-100px) rotate(-360deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+/* Glitter sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg) translateZ(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg) translateZ(0);
+  }
+}
+
+/* Floating animation for decorations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-20px) translateZ(0);
+  }
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+  }
 }
 
 /* Animation utilities - All using GPU-accelerated properties (transform, opacity) */
@@ -185,4 +320,51 @@ button,
 a {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+/* Snow container */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Individual snowflakes */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: white;
+  font-size: 1em;
+  user-select: none;
+  pointer-events: none;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* Glitter/sparkle effects */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Retro gaming decorations */
+.retro-star {
+  animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.retro-coin {
+  animation: float 2.5s ease-in-out infinite;
+  will-change: transform;
 }

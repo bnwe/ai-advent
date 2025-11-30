@@ -120,22 +120,31 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-slate-800 rounded-2xl p-8 shadow-2xl animate-scale-in will-change-transform"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 shadow-2xl animate-scale-in will-change-transform retro-box border-cyan-300 pixel-text"
         style={{
           backgroundColor: RETRO_THEME.colors.backgroundLight,
-          borderRadius: RETRO_THEME.spacing.borderRadiusLarge,
           transform: 'translateZ(0)',
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 168, 232, 0.03) 2px, rgba(0, 168, 232, 0.03) 4px)',
         }}
       >
+        {/* Decorative corner penguins */}
+        <div className="absolute top-2 left-2 w-10 h-10 retro-star" style={{ filter: 'drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8))' }}>
+          <Image src="/images/tux.png" alt="" width={40} height={40} className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute bottom-2 right-2 w-10 h-10 retro-star" style={{ animationDelay: '0.5s', filter: 'drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8))' }}>
+          <Image src="/images/tux.png" alt="" width={40} height={40} className="w-full h-full object-cover" />
+        </div>
+        
         {/* Close Button */}
         <button
           ref={closeButtonRef}
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-lg font-bold text-xl transition-all duration-300 ease-out hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform"
+          className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center font-black text-2xl transition-all duration-300 ease-out hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform retro-box border-red-400"
           style={{
-            backgroundColor: RETRO_THEME.colors.primary,
+            backgroundColor: '#FF3366',
             color: RETRO_THEME.colors.text,
             transform: 'translateZ(0)',
+            textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)',
           }}
           aria-label="Close content view"
         >
@@ -147,13 +156,14 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
           {/* Title */}
           <h2
             id="modal-title"
-            className="text-3xl md:text-4xl font-bold pr-12"
+            className="text-3xl md:text-4xl font-black pr-12 pixel-header"
             style={{
-              color: RETRO_THEME.colors.accent,
-              fontFamily: RETRO_THEME.typography.fontSans,
+              color: '#FFD700',
+              fontFamily: 'Courier New, Courier, monospace',
+              textShadow: '4px 4px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 215, 0, 0.6)',
             }}
           >
-            {content.title}
+            🎁 {content.title}
           </h2>
 
           {/* Image (if provided and not errored) */}
@@ -177,10 +187,11 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
 
           {/* Text Content */}
           <div
-            className="text-lg md:text-xl leading-relaxed"
+            className="text-lg md:text-xl leading-relaxed pixel-text"
             style={{
               color: RETRO_THEME.colors.snow,
-              fontFamily: RETRO_THEME.typography.fontSans,
+              fontFamily: 'Courier New, Courier, monospace',
+              textShadow: '2px 2px 0px rgba(0, 0, 0, 0.6)',
             }}
           >
             {content.text}
@@ -191,15 +202,17 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
             <button
               ref={bottomCloseButtonRef}
               onClick={onClose}
-              className="px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 ease-out hover:scale-105 hover:brightness-110 active:scale-95 retro-shadow focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform"
+              className="px-8 py-4 font-black text-xl transition-all duration-200 ease-out hover:scale-110 hover:brightness-125 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform retro-box border-cyan-300 pixel-header"
               style={{
-                backgroundColor: RETRO_THEME.colors.primary,
+                backgroundColor: '#00A8E8',
                 color: RETRO_THEME.colors.text,
                 transform: 'translateZ(0)',
+                fontFamily: 'Courier New, Courier, monospace',
+                textShadow: '3px 3px 0px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 168, 232, 0.8)',
               }}
               aria-label="Close content view"
             >
-              Schließen
+              ❄️ CLOSE ❄️
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import Door from './Door';
 import ContentView from './ContentView';
 import { DoorContent } from '../types/door';
@@ -91,11 +92,31 @@ export default function Calendar({ doors }: Readonly<CalendarProps>) {
   const sortedDoors = [...doors].sort((a, b) => a.day - b.day);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      {/* Calendar Title */}
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 text-red-600">
-        🎄 Adventskalender 2024 🎄
-      </h1>
+    <div className="w-full max-w-7xl mx-auto px-4 py-8 relative z-10">
+      {/* Retro Gaming Title */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl md:text-7xl font-black text-center mb-4 pixel-header text-cyan-300 relative inline-block"
+          style={{
+            textShadow: '5px 5px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4), 0 0 30px rgba(0, 168, 232, 0.8)',
+          }}>
+          🎄 ADVENT CALENDAR 🎄
+        </h1>
+        <div className="text-2xl md:text-3xl font-black text-yellow-300 pixel-header mt-2"
+          style={{
+            textShadow: '4px 4px 0px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 215, 0, 0.8)',
+          }}>
+          ★ WINTER 2024 ★
+        </div>
+        <div className="flex justify-center items-center gap-6 mt-6">
+          <div className="retro-star w-12 h-12" style={{ filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>
+            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" />
+          </div>
+          <span className="retro-coin text-4xl" style={{ filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>🪙</span>
+          <div className="retro-star w-12 h-12" style={{ animationDelay: '0.5s', filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>
+            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
 
       {/* Door Grid - Responsive layout */}
       <div 
