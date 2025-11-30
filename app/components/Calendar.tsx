@@ -99,13 +99,13 @@ export default function Calendar({ doors }: Readonly<CalendarProps>) {
           style={{
             textShadow: '5px 5px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4)',
           }}>
-          🎄 ADVENT CALENDAR 🎄
+          🎄 ADVENTSKALENDER 🎄
         </h1>
         <div className="text-2xl md:text-3xl font-black text-yellow-300 pixel-header mt-2"
           style={{
             textShadow: '4px 4px 0px rgba(0, 0, 0, 1)',
           }}>
-          ★ WINTER 2024 ★
+          ★ 2025 ★
         </div>
         <div className="flex justify-center items-center gap-6 mt-6">
           <div className="retro-star-simple w-12 h-12">

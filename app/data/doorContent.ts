@@ -15,6 +15,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 2,
     title: 'Tag 2: Winterzauber',
     text: 'Der Schnee fällt leise und die Welt wird still. Genieße die magische Atmosphäre der Adventszeit.',
+    imageUrl: '/images/day2.png'
   },
   {
     day: 3,
@@ -26,6 +27,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 4,
     title: 'Tag 4: Adventskranz',
     text: 'Die erste Kerze brennt am Adventskranz. Ein warmes Licht in der dunklen Jahreszeit.',
+    imageUrl: '/images/day4.png'
   },
   {
     day: 5,
@@ -37,11 +39,13 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 6,
     title: 'Tag 6: Sternenhimmel',
     text: 'Schau in den klaren Winterhimmel und zähle die Sterne. Jeder funkelt wie ein kleines Wunder.',
+    imageUrl: '/images/day6.png'
   },
   {
     day: 7,
     title: 'Tag 7: Geschichten',
     text: 'Zeit für gemütliche Weihnachtsgeschichten am Kamin. Lass dich verzaubern!',
+    imageUrl: '/images/day7.png'
   },
   {
     day: 8,
@@ -53,6 +57,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 9,
     title: 'Tag 9: Glühwein',
     text: 'Ein heißer Glühwein wärmt Herz und Seele. Prost auf die schönste Zeit des Jahres!',
+    imageUrl: '/images/day9.png'
   },
   {
     day: 10,
@@ -64,11 +69,13 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 11,
     title: 'Tag 11: Zweite Kerze',
     text: 'Die zweite Kerze am Adventskranz wird angezündet. Weihnachten rückt näher!',
+    imageUrl: '/images/day11.png'
   },
   {
     day: 12,
     title: 'Tag 12: Weihnachtsmarkt',
     text: 'Bummel über den Weihnachtsmarkt, genieße gebrannte Mandeln und bewundere das Kunsthandwerk.',
+    imageUrl: '/images/day12.png'
   },
   {
     day: 13,
@@ -80,6 +87,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 14,
     title: 'Tag 14: Engel',
     text: 'Weihnachtsengel wachen über uns. Ihre Botschaft: Friede auf Erden!',
+    imageUrl: '/images/day14.png'
   },
   {
     day: 15,
@@ -91,16 +99,19 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 16,
     title: 'Tag 16: Schneemann',
     text: 'Bau einen Schneemann! Karotte als Nase, Kohle als Augen und einen alten Hut obendrauf.',
+    imageUrl: '/images/day16.png'
   },
   {
     day: 17,
     title: 'Tag 17: Weihnachtslieder',
     text: 'Singe deine Lieblings-Weihnachtslieder! "Stille Nacht, heilige Nacht..."',
+    imageUrl: '/images/day17.png'
   },
   {
     day: 18,
     title: 'Tag 18: Dritte Kerze',
     text: 'Drei Kerzen brennen nun am Adventskranz. Das Fest der Liebe ist ganz nah!',
+    imageUrl: '/images/day18.png'
   },
   {
     day: 19,
@@ -112,11 +123,13 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 20,
     title: 'Tag 20: Winterwald',
     text: 'Ein Spaziergang durch den verschneiten Wald. Die Natur ruht in friedlicher Stille.',
+    imageUrl: '/images/day20.png'
   },
   {
     day: 21,
     title: 'Tag 21: Vierte Kerze',
     text: 'Alle vier Kerzen brennen! Der Adventskranz erstrahlt in vollem Glanz.',
+    imageUrl: '/images/day21.png'
   },
   {
     day: 22,
@@ -128,6 +141,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
     day: 23,
     title: 'Tag 23: Heiligabend naht',
     text: 'Morgen ist es soweit! Die Vorfreude ist kaum noch auszuhalten.',
+    imageUrl: '/images/day23.png'
   },
   {
     day: 24,

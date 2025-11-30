@@ -4,17 +4,31 @@ This directory contains images for the advent calendar doors.
 
 ## Required Images
 
-The following placeholder images are referenced in the door content configuration:
+All 24 days include an image. The following images are referenced in the door content configuration:
 
 - `day1.png` - Welcome/Advent theme
+- `day2.png` - Winter magic theme
 - `day3.png` - Christmas cookies/baking theme
+- `day4.png` - Advent wreath theme
 - `day5.png` - St. Nicholas theme
+- `day6.png` - Starry sky theme
+- `day7.png` - Christmas stories theme
 - `day8.png` - Christmas tree theme
+- `day9.png` - Mulled wine theme
 - `day10.png` - Sledding/winter sports theme
+- `day11.png` - Second candle theme
+- `day12.png` - Christmas market theme
 - `day13.png` - Gift wrapping theme
+- `day14.png` - Angels theme
 - `day15.png` - Gingerbread theme
+- `day16.png` - Snowman theme
+- `day17.png` - Christmas carols theme
+- `day18.png` - Third candle theme
 - `day19.png` - Reindeer theme
+- `day20.png` - Winter forest theme
+- `day21.png` - Fourth candle theme
 - `day22.png` - Wish list theme
+- `day23.png` - Christmas Eve approaching theme
 - `day24.png` - Christmas Eve celebration theme
 
 ## Image Specifications
@@ -35,4 +49,4 @@ The application will gracefully handle missing images by displaying content with
 ✅ **Door content is complete** - All 24 doors have final German text with festive themes
 ✅ **Consistent tone** - Warm, family-friendly Christmas atmosphere throughout
 ✅ **Thematic progression** - Content builds excitement from December 1st to Christmas Eve
-⚠️ **Images pending** - 10 image files need to be sourced/created by design team
+⚠️ **Images pending** - All 24 image files need to be sourced/created by design team

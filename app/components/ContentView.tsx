@@ -200,7 +200,7 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
               }}
               aria-label="Close content view"
             >
-              ❄️ CLOSE ❄️
+              ❄️ Schließen ❄️
             </button>
           </div>
         </div>
