@@ -26,13 +26,13 @@ export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 4,
     title: 'Feuer und Flamme',
-    text: 'Der Adventskranz wurde 1839 von Johann Hinrich Wichern erfunden. Er trug 19 kleine und vier große Kerzen, von denen jeweils eine pro Tag (Werktage: kleine Kerzen, Sonntage: große Kerzen) bis zum Weihnachtsfest angezündet wurde. Es wird schätzt, dass jedes Jahr 12.000 Adventskränze und Weihnachtsbäume in Deutschland Feuer fangen. Der Schaden beläuft sich auf etwa 36 Million Euro.',
+    text: 'Der Adventskranz wurde 1839 in Deutschland erfunden. Er trug 19 kleine und vier große Kerzen, von denen jeweils eine pro Tag (Werktage: kleine Kerzen, Sonntage: große Kerzen) bis zum Weihnachtsfest angezündet wurde. Es wird schätzt, dass jedes Jahr 12.000 Adventskränze und Weihnachtsbäume in Deutschland Feuer fangen. Der Schaden beläuft sich auf etwa 36 Million Euro.',
     imageUrl: '/images/day4.png'
   },
   {
     day: 5,
     title: 'Zwerge',
-    text: ' Eines der schönsten Dinge in der Vorweihnachtszeit ist der Adventskalender. In Island jedoch hat dieser nicht 24, sondern nur 13 Türchen. Grund dafür ist, dass hier im Gegensatz zum unserem Weihnachtsmann oder Christkind, die 13 Weihnachtszwerge die Geschenke bringen. Am 12. Dezember geht es los.',
+    text: ' Eines der schönsten Dinge in der Vorweihnachtszeit ist der Adventskalender. In Island jedoch hat dieser nicht 24, sondern nur 13 Türchen. Grund dafür ist, dass hier im Gegensatz zu unserem Weihnachtsmann oder Christkind, die 13 Weihnachtszwerge die Geschenke bringen. Am 12. Dezember geht es los.',
     imageUrl: '/images/day5.png'
   },
   {
@@ -74,7 +74,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 12,
     title: 'Glitzer aus Franken',
-    text: 'Das Lametta wurde Nürnberg 1878 erfunden. Anfangs nur in silber, da es an Eiszapfen erinnern sollte.',
+    text: 'Das Lametta wurde in Nürnberg 1878 erfunden. Anfangs nur in silber, da es an Eiszapfen erinnern sollte.',
     imageUrl: '/images/day12.png'
   },
   {
@@ -110,13 +110,13 @@ export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 18,
     title: 'In genau einem Monat...',
-    text: 'Am 18. Januar wird seit 2010 der Welttag des Schneemanns gefeiert Gartenzeitung! Das Datum wurde durch die Form inspiriert: die "1" steht für den Stock und die "8" für die runde Form des Schneemanns',
+    text: 'Am 18. Januar wird seit 2010 der Welttag des Schneemanns gefeiert! Das Datum wurde durch die Form inspiriert: die "1" steht für den Stock und die "8" für die runde Form des Schneemanns',
     imageUrl: '/images/day18.png'
   },
   {
     day: 19,
     title: 'Rote Nase...',
-    text: 'Rudolph, das Rentier mit der roten Nase, wurde 1939 für eine Werbekampagne eines Kaufhauses erfunden Wikipedia! Der Autor Robert May hatte zuerst die Namen "Reginald" (zu britisch) und "Rollo" (zu heiter) überlegt, bevor er sich für "Rudolph" entschied. Die Kaufhausleitung hatte Bedenken wegen der roten Nase, weil sie befürchteten, das könnte mit Alkoholismus in Verbindung gebracht werden...',
+    text: 'Rudolph, das Rentier mit der roten Nase, wurde 1939 für eine Werbekampagne eines Kaufhauses erfunden! Der Autor Robert May hatte zuerst die Namen "Reginald" (zu britisch) und "Rollo" (zu heiter) überlegt, bevor er sich für "Rudolph" entschied. Die Kaufhausleitung hatte Bedenken wegen der roten Nase, weil sie befürchteten, das könnte mit Alkoholismus in Verbindung gebracht werden...',
     imageUrl: '/images/day19.png'
   },
   {
@@ -134,7 +134,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 22,
     title: 'Guten Rutsch!',
-    text: '"Guten Rutsch" hat nichts mit Glatteis oder "Rüberrutschen" zu tun - das ist ein verbreiteter Irrglaube. "Rutsch" bedeutete im 19. Jahrhundert (etwa ab 1800) "Reise" - "Guten Rutsch" bedeutet also eigentlich "Gute Reise ins neue Jahr".',
+    text: '"Guten Rutsch" hat nichts mit Glatteis oder "Rüberrutschen" zu tun - das ist ein verbreiteter Irrglaube. "Rutsch" bedeutete im 19. Jahrhundert "Reise". "Guten Rutsch" bedeutet also eigentlich "Gute Reise ins neue Jahr".',
     imageUrl: '/images/day22.png'
   },
   {
@@ -146,7 +146,7 @@ export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 24,
     title: 'Wann ist Jesus geboren?',
-    text: 'Seit dem Jahr 350 n. Chr. wird die Geburt Jesus Christus offiziell auf den 25. Dezember datiert. Bestimmt hatte dies Julius I., der damalige Bischof von Rom.',
+    text: 'Seit dem Jahr 350 wird die Geburt Jesus Christus offiziell auf den 25. Dezember datiert. Bestimmt hatte dies Julius I., der damalige Bischof von Rom.',
     imageUrl: '/images/day24.png'
   },
 ];
