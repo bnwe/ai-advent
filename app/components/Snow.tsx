@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
  * Snow Component
  * Creates animated falling snowflakes across the screen
  * Inspired by retro gaming aesthetics
- * Optimized: Reduced from 50 to 20 snowflakes for better performance
+ * Optimized: 20 snowflakes on desktop, 2 snowflakes (10%) on mobile for better performance
  */
 export default function Snow() {
   const [snowflakes, setSnowflakes] = useState<Array<{
@@ -26,8 +26,13 @@ export default function Snow() {
       return; // Don't render snowflakes if reduced motion is preferred
     }
 
-    // Generate fewer snowflakes for better performance (20 instead of 50)
-    const flakes = Array.from({ length: 20 }, (_, i) => ({
+    // Detect mobile devices (screen width < 768px)
+    const isMobile = window.innerWidth < 768;
+    
+    // Use 10% of snowflakes on mobile (2 snowflakes), 20 on desktop
+    const snowflakeCount = isMobile ? 2 : 20;
+    
+    const flakes = Array.from({ length: snowflakeCount }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       animationDuration: 10 + Math.random() * 20,
