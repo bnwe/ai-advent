@@ -104,3 +104,10 @@ Edit `app/data/doorContent.ts` to customize what appears behind each door:
 - Theme configuration: `app/styles/theme.ts`
 - Tailwind config: Uses inline `@theme` directive in globals.css
 
+## TODOs
+
+- Add images to the fun facts
+- Add sources to the fun facts
+- Persist content data in data base
+- Add admin panel for the content
+- Add AI feature for generating the content
