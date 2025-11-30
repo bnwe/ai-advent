@@ -99,10 +99,10 @@ export default function Door({ day, isUnlocked, onClick }: Readonly<DoorProps>) 
         </div>
       )}
 
-      {/* Unlocked Indicator - Tux penguin */}
+      {/* Unlocked Indicator - Coin */}
       {isUnlocked && (
         <div className="absolute top-2 right-2 w-8 h-8 animate-door-unlock" style={{ transform: 'translateZ(0)' }}>
-          <Image src="/images/tux.png" alt="" width={32} height={32} className="w-full h-full object-cover" />
+          <Image src="/images/coin.png" alt="" width={32} height={32} className="w-full h-full object-contain" />
         </div>
       )}
 

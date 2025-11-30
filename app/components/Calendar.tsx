@@ -111,7 +111,9 @@ export default function Calendar({ doors }: Readonly<CalendarProps>) {
           <div className="retro-star-simple w-12 h-12">
             <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" priority />
           </div>
-          <span className="retro-coin-simple text-4xl">🪙</span>
+          <div className="retro-coin-simple w-12 h-12">
+            <Image src="/images/coin.png" alt="" width={48} height={48} className="w-full h-full object-contain" priority />
+          </div>
           <div className="retro-star-simple w-12 h-12" style={{ animationDelay: '0.5s' }}>
             <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" priority />
           </div>

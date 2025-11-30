@@ -391,3 +391,49 @@ a {
 .retro-float {
   animation: float 3.5s ease-in-out infinite;
 }
+
+/* Retro game coin - Classic golden coin with pixel art style */
+.retro-game-coin {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, 
+    #FFD700 0%,
+    #FFA500 25%,
+    #FFD700 50%,
+    #FFA500 75%,
+    #FFD700 100%
+  );
+  border: 3px solid #B8860B;
+  box-shadow: 
+    inset -3px -3px 6px rgba(0, 0, 0, 0.4),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retro-game-coin::before {
+  content: '★';
+  font-size: 24px;
+  color: #B8860B;
+  text-shadow: 
+    1px 1px 0 rgba(255, 255, 255, 0.8),
+    -1px -1px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.retro-game-coin::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+}

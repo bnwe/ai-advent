@@ -60,11 +60,11 @@ export default function RetroDecorations() {
       </div>
       
       {/* Floating coins */}
-      <div className="absolute top-1/4 left-20 retro-coin-simple text-yellow-400 text-3xl" style={{ animationDelay: '0.3s' }}>
-        🪙
+      <div className="absolute top-1/4 left-20 retro-coin-simple w-12 h-12" style={{ animationDelay: '0.3s' }}>
+        <Image src="/images/coin.png" alt="" width={48} height={48} className="w-full h-full object-contain" />
       </div>
-      <div className="absolute top-1/3 right-20 retro-coin-simple text-yellow-400 text-3xl" style={{ animationDelay: '0.8s' }}>
-        🪙
+      <div className="absolute top-1/3 right-20 retro-coin-simple w-12 h-12" style={{ animationDelay: '0.8s' }}>
+        <Image src="/images/coin.png" alt="" width={48} height={48} className="w-full h-full object-contain" />
       </div>
       
       {/* Christmas trees */}

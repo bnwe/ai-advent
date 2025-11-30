@@ -27,7 +27,6 @@ interface ContentViewProps {
 export default function ContentView({ content, onClose, isOpen }: Readonly<ContentViewProps>) {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const bottomCloseButtonRef = useRef<HTMLButtonElement>(null);
   const [imageError, setImageError] = useState<boolean>(false);
 
   // Reset image error state when content changes
@@ -53,7 +52,7 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
   useEffect(() => {
     if (!isOpen) return;
 
-    // Focus the top close button when modal opens
+    // Focus the close button when modal opens
     if (closeButtonRef.current) {
       closeButtonRef.current.focus();
     }
@@ -125,27 +124,12 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
           backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 168, 232, 0.03) 2px, rgba(0, 168, 232, 0.03) 4px)',
         }}
       >
-        {/* Close Button */}
-        <button
-          ref={closeButtonRef}
-          onClick={onClose}
-          className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center font-black text-2xl transition-all duration-300 ease-out hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 retro-box border-red-400"
-          style={{
-            backgroundColor: '#FF3366',
-            color: RETRO_THEME.colors.text,
-            textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)',
-          }}
-          aria-label="Close content view"
-        >
-          ✕
-        </button>
-
         {/* Content Container */}
         <div className="space-y-6">
           {/* Title */}
           <h2
             id="modal-title"
-            className="text-3xl md:text-4xl font-black pr-12 pixel-header"
+            className="text-3xl md:text-4xl font-black pixel-header"
             style={{
               color: '#FFD700',
               fontFamily: 'Courier New, Courier, monospace',
@@ -186,10 +170,10 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
             {content.text}
           </div>
 
-          {/* Close Button (Bottom) */}
+          {/* Close Button */}
           <div className="flex justify-center pt-4">
             <button
-              ref={bottomCloseButtonRef}
+              ref={closeButtonRef}
               onClick={onClose}
               className="px-8 py-4 font-black text-xl transition-all duration-200 ease-out hover:scale-110 hover:brightness-125 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 retro-box border-cyan-300 pixel-header"
               style={{
