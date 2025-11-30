@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
  * Snow Component
  * Creates animated falling snowflakes across the screen
  * Inspired by retro gaming aesthetics
+ * Optimized: Reduced from 50 to 20 snowflakes for better performance
  */
 export default function Snow() {
   const [snowflakes, setSnowflakes] = useState<Array<{
@@ -18,8 +19,15 @@ export default function Snow() {
   }>>([]);
 
   useEffect(() => {
-    // Generate snowflakes
-    const flakes = Array.from({ length: 50 }, (_, i) => ({
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      return; // Don't render snowflakes if reduced motion is preferred
+    }
+
+    // Generate fewer snowflakes for better performance (20 instead of 50)
+    const flakes = Array.from({ length: 20 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       animationDuration: 10 + Math.random() * 20,

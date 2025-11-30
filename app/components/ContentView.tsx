@@ -111,39 +111,28 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-90 animate-fade-in will-change-transform"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-90 animate-fade-in"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      style={{ transform: 'translateZ(0)' }}
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 shadow-2xl animate-scale-in will-change-transform retro-box border-cyan-300 pixel-text"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 shadow-2xl animate-scale-in retro-box border-cyan-300 pixel-text"
         style={{
           backgroundColor: RETRO_THEME.colors.backgroundLight,
-          transform: 'translateZ(0)',
           backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 168, 232, 0.03) 2px, rgba(0, 168, 232, 0.03) 4px)',
         }}
       >
-        {/* Decorative corner penguins */}
-        <div className="absolute top-2 left-2 w-10 h-10 retro-star" style={{ filter: 'drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8))' }}>
-          <Image src="/images/tux.png" alt="" width={40} height={40} className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute bottom-2 right-2 w-10 h-10 retro-star" style={{ animationDelay: '0.5s', filter: 'drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8))' }}>
-          <Image src="/images/tux.png" alt="" width={40} height={40} className="w-full h-full object-cover" />
-        </div>
-        
         {/* Close Button */}
         <button
           ref={closeButtonRef}
           onClick={onClose}
-          className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center font-black text-2xl transition-all duration-300 ease-out hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform retro-box border-red-400"
+          className="absolute top-4 right-4 w-12 h-12 flex items-center justify-center font-black text-2xl transition-all duration-300 ease-out hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 retro-box border-red-400"
           style={{
             backgroundColor: '#FF3366',
             color: RETRO_THEME.colors.text,
-            transform: 'translateZ(0)',
             textShadow: '2px 2px 0px rgba(0, 0, 0, 0.8)',
           }}
           aria-label="Close content view"
@@ -160,7 +149,7 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
             style={{
               color: '#FFD700',
               fontFamily: 'Courier New, Courier, monospace',
-              textShadow: '4px 4px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 215, 0, 0.6)',
+              textShadow: '4px 4px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4)',
             }}
           >
             🎁 {content.title}
@@ -202,13 +191,12 @@ export default function ContentView({ content, onClose, isOpen }: Readonly<Conte
             <button
               ref={bottomCloseButtonRef}
               onClick={onClose}
-              className="px-8 py-4 font-black text-xl transition-all duration-200 ease-out hover:scale-110 hover:brightness-125 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 will-change-transform retro-box border-cyan-300 pixel-header"
+              className="px-8 py-4 font-black text-xl transition-all duration-200 ease-out hover:scale-110 hover:brightness-125 active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-400 retro-box border-cyan-300 pixel-header"
               style={{
                 backgroundColor: '#00A8E8',
                 color: RETRO_THEME.colors.text,
-                transform: 'translateZ(0)',
                 fontFamily: 'Courier New, Courier, monospace',
-                textShadow: '3px 3px 0px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 168, 232, 0.8)',
+                textShadow: '3px 3px 0px rgba(0, 0, 0, 1)',
               }}
               aria-label="Close content view"
             >

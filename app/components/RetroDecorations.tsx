@@ -7,6 +7,7 @@ import Image from 'next/image';
  * RetroDecorations Component
  * Adds retro gaming-style decorations like Tux, coins, and sparkles
  * Inspired by Super Tux and classic platformer games
+ * Optimized: Reduced sparkles from 30 to 10, simplified animations
  */
 export default function RetroDecorations() {
   const [sparkles, setSparkles] = useState<Array<{
@@ -17,8 +18,15 @@ export default function RetroDecorations() {
   }>>([]);
 
   useEffect(() => {
-    // Generate random sparkles
-    const newSparkles = Array.from({ length: 30 }, (_, i) => ({
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      return; // Don't render sparkles if reduced motion is preferred
+    }
+
+    // Generate fewer sparkles for better performance (10 instead of 30)
+    const newSparkles = Array.from({ length: 10 }, (_, i) => ({
       id: i,
       top: Math.random() * 100,
       left: Math.random() * 100,
@@ -43,43 +51,35 @@ export default function RetroDecorations() {
         />
       ))}
 
-      {/* Floating Tux penguins - top corners */}
-      <div className="absolute top-10 left-10 retro-star w-20 h-20" style={{ filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5))' }}>
-        <Image src="/images/tux.png" alt="" width={80} height={80} className="w-full h-full object-cover" />
+      {/* Floating Tux penguins - top corners only (removed side ones for performance) */}
+      <div className="absolute top-10 left-10 retro-star-simple w-20 h-20">
+        <Image src="/images/tux.png" alt="" width={80} height={80} className="w-full h-full object-cover" priority />
       </div>
-      <div className="absolute top-10 right-10 retro-star w-20 h-20" style={{ animationDelay: '0.5s', filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5))' }}>
-        <Image src="/images/tux.png" alt="" width={80} height={80} className="w-full h-full object-cover" />
-      </div>
-      
-      {/* More Tux penguins scattered around */}
-      <div className="absolute top-1/2 left-10 retro-star w-16 h-16" style={{ animationDelay: '1s', filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5))' }}>
-        <Image src="/images/tux.png" alt="" width={64} height={64} className="w-full h-full object-cover" />
-      </div>
-      <div className="absolute top-1/2 right-10 retro-star w-16 h-16" style={{ animationDelay: '1.5s', filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5))' }}>
-        <Image src="/images/tux.png" alt="" width={64} height={64} className="w-full h-full object-cover" />
+      <div className="absolute top-10 right-10 retro-star-simple w-20 h-20" style={{ animationDelay: '0.5s' }}>
+        <Image src="/images/tux.png" alt="" width={80} height={80} className="w-full h-full object-cover" priority />
       </div>
       
       {/* Floating coins */}
-      <div className="absolute top-1/4 left-20 retro-coin text-yellow-400 text-3xl" style={{ animationDelay: '0.3s' }}>
+      <div className="absolute top-1/4 left-20 retro-coin-simple text-yellow-400 text-3xl" style={{ animationDelay: '0.3s' }}>
         🪙
       </div>
-      <div className="absolute top-1/3 right-20 retro-coin text-yellow-400 text-3xl" style={{ animationDelay: '0.8s' }}>
+      <div className="absolute top-1/3 right-20 retro-coin-simple text-yellow-400 text-3xl" style={{ animationDelay: '0.8s' }}>
         🪙
       </div>
       
       {/* Christmas trees */}
-      <div className="absolute bottom-20 left-10 text-green-400 text-5xl" style={{ animation: 'float 4s ease-in-out infinite' }}>
+      <div className="absolute bottom-20 left-10 text-green-400 text-5xl retro-float" style={{ animationDelay: '0s' }}>
         🎄
       </div>
-      <div className="absolute bottom-20 right-10 text-green-400 text-5xl" style={{ animation: 'float 3.5s ease-in-out infinite', animationDelay: '0.5s' }}>
+      <div className="absolute bottom-20 right-10 text-green-400 text-5xl retro-float" style={{ animationDelay: '0.5s' }}>
         🎄
       </div>
       
       {/* Presents */}
-      <div className="absolute bottom-32 left-1/4 text-4xl" style={{ animation: 'float 3s ease-in-out infinite', animationDelay: '0.2s' }}>
+      <div className="absolute bottom-32 left-1/4 text-4xl retro-float" style={{ animationDelay: '0.2s' }}>
         🎁
       </div>
-      <div className="absolute bottom-32 right-1/4 text-4xl" style={{ animation: 'float 3.2s ease-in-out infinite', animationDelay: '0.7s' }}>
+      <div className="absolute bottom-32 right-1/4 text-4xl retro-float" style={{ animationDelay: '0.7s' }}>
         🎁
       </div>
     </div>

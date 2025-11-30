@@ -97,23 +97,23 @@ export default function Calendar({ doors }: Readonly<CalendarProps>) {
       <div className="text-center mb-12">
         <h1 className="text-5xl md:text-7xl font-black text-center mb-4 pixel-header text-cyan-300 relative inline-block"
           style={{
-            textShadow: '5px 5px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4), 0 0 30px rgba(0, 168, 232, 0.8)',
+            textShadow: '5px 5px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4)',
           }}>
           🎄 ADVENT CALENDAR 🎄
         </h1>
         <div className="text-2xl md:text-3xl font-black text-yellow-300 pixel-header mt-2"
           style={{
-            textShadow: '4px 4px 0px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 215, 0, 0.8)',
+            textShadow: '4px 4px 0px rgba(0, 0, 0, 1)',
           }}>
           ★ WINTER 2024 ★
         </div>
         <div className="flex justify-center items-center gap-6 mt-6">
-          <div className="retro-star w-12 h-12" style={{ filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>
-            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" />
+          <div className="retro-star-simple w-12 h-12">
+            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" priority />
           </div>
-          <span className="retro-coin text-4xl" style={{ filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>🪙</span>
-          <div className="retro-star w-12 h-12" style={{ animationDelay: '0.5s', filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8))' }}>
-            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" />
+          <span className="retro-coin-simple text-4xl">🪙</span>
+          <div className="retro-star-simple w-12 h-12" style={{ animationDelay: '0.5s' }}>
+            <Image src="/images/tux.png" alt="" width={48} height={48} className="w-full h-full object-cover" priority />
           </div>
         </div>
       </div>

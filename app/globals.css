@@ -311,8 +311,17 @@ body {
 }
 
 /* Performance optimization: Enable hardware acceleration for animated elements */
+/* Only use will-change on elements that are actively animating */
 .will-change-transform {
   will-change: transform;
+}
+
+/* Optimize animations by using transform and opacity only */
+@media (prefers-reduced-motion: no-preference) {
+  .snowflake,
+  .sparkle {
+    will-change: transform, opacity;
+  }
 }
 
 /* Smooth transitions for all interactive elements */
@@ -332,6 +341,7 @@ a {
   pointer-events: none;
   z-index: 9999;
   overflow: hidden;
+  contain: layout style paint;
 }
 
 /* Individual snowflakes */
@@ -344,7 +354,7 @@ a {
   pointer-events: none;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  will-change: transform, opacity;
+  contain: layout style paint;
 }
 
 /* Glitter/sparkle effects */
@@ -355,10 +365,10 @@ a {
   background: white;
   border-radius: 50%;
   animation: sparkle 2s ease-in-out infinite;
-  will-change: transform, opacity;
+  contain: layout style paint;
 }
 
-/* Retro gaming decorations */
+/* Retro gaming decorations - Optimized versions without will-change */
 .retro-star {
   animation: float 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
   will-change: transform, box-shadow;
@@ -367,4 +377,17 @@ a {
 .retro-coin {
   animation: float 2.5s ease-in-out infinite;
   will-change: transform;
+}
+
+/* Simplified versions without expensive effects */
+.retro-star-simple {
+  animation: float 3s ease-in-out infinite;
+}
+
+.retro-coin-simple {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.retro-float {
+  animation: float 3.5s ease-in-out infinite;
 }

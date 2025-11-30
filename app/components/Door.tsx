@@ -80,13 +80,12 @@ export default function Door({ day, isUnlocked, onClick }: Readonly<DoorProps>) 
           ${isUnlocked ? 'text-white' : 'text-gray-400'}
           transition-all
           duration-200
-          will-change-transform
         `}
         style={{
           transform: 'translateZ(0)',
           fontFamily: 'Courier New, Courier, monospace',
           textShadow: isUnlocked 
-            ? '4px 4px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4), 0 0 15px rgba(0, 168, 232, 0.6)'
+            ? '4px 4px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(255, 255, 255, 0.4)'
             : '3px 3px 0px rgba(0, 0, 0, 0.8)',
         }}
       >
@@ -95,20 +94,15 @@ export default function Door({ day, isUnlocked, onClick }: Readonly<DoorProps>) 
 
       {/* Lock Icon - Only shown when locked */}
       {!isUnlocked && (
-        <div className="absolute top-2 right-2 transition-opacity duration-300 will-change-transform" style={{ transform: 'translateZ(0)' }}>
+        <div className="absolute top-2 right-2 transition-opacity duration-300">
           <div className="text-2xl">🔒</div>
         </div>
       )}
 
       {/* Unlocked Indicator - Tux penguin */}
       {isUnlocked && (
-        <div className="absolute top-2 right-2 w-8 h-8 animate-door-unlock will-change-transform" style={{ transform: 'translateZ(0)' }}>
-          <div className="animate-pulse will-change-transform w-full h-full" style={{ 
-            transform: 'translateZ(0)',
-            filter: 'drop-shadow(0 0 10px rgba(0, 255, 255, 0.8)) drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8))'
-          }}>
-            <Image src="/images/tux.png" alt="" width={32} height={32} className="w-full h-full object-cover" />
-          </div>
+        <div className="absolute top-2 right-2 w-8 h-8 animate-door-unlock" style={{ transform: 'translateZ(0)' }}>
+          <Image src="/images/tux.png" alt="" width={32} height={32} className="w-full h-full object-cover" />
         </div>
       )}
 
@@ -121,7 +115,7 @@ export default function Door({ day, isUnlocked, onClick }: Readonly<DoorProps>) 
 
       {/* Hover hint for unlocked doors */}
       {isUnlocked && (
-        <span className="text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 will-change-transform absolute bottom-2" style={{ transform: 'translateZ(0)' }}>
+        <span className="text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 absolute bottom-2">
           PRESS!
         </span>
       )}
