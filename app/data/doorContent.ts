@@ -7,14 +7,14 @@ import { DoorContent } from '../types/door';
 export const DOOR_CONTENTS: DoorContent[] = [
   {
     day: 1,
-    title: 'Warum feiern wir nochmal?',
-    text: 'Jeder 10. Deutsche hat laut einer Stern-Umfrage keine Ahnung, warum Weihnachten überhaupt gefeiert wird.',
+    title: 'Rudolph oder Rudolphine?',
+    text: 'Die Rentiere mit Geweih, die den Weihnachtsmann begleiten, müssen weibliche Tiere sein. Fakt ist nämlich, dass männliche Rentiere ihr Geweih in der Weihnachtszeit verlieren. Die weiblichen Rentiere hingegen werfen ihre Geweihe erst im Frühjahr ab.',
     imageUrl: '/images/day1.png'
   },
   {
     day: 2,
-    title: 'Die Weihnachtsgurke',
-    text: 'In den USA ist "The Christmas Pickle" ein Renner – eine kleine Glasgurke wird im Baum versteckt, und wer sie findet, hat Glück!',
+    title: 'Warum feiern wir nochmal?',
+    text: 'Jeder 10. Deutsche hat laut einer Stern-Umfrage keine Ahnung, warum Weihnachten überhaupt gefeiert wird.',
     imageUrl: '/images/day2.png'
   },
   {
@@ -43,8 +43,8 @@ export const DOOR_CONTENTS: DoorContent[] = [
   },
   {
     day: 7,
-    title: 'Rudolph oder Rudolphine?',
-    text: 'Die Rentiere mit Geweih, die den Weihnachtsmann begleiten, müssen weibliche Tiere sein. Fakt ist nämlich, dass männliche Rentiere ihr Geweih in der Weihnachtszeit verlieren. Die weiblichen Rentiere hingegen werfen ihre Geweihe erst im Frühjahr ab.',
+    title: 'Die Weihnachtsgurke',
+    text: 'In den USA ist "The Christmas Pickle" ein Renner – eine kleine Glasgurke wird im Baum versteckt, und wer sie findet, hat Glück!',
     imageUrl: '/images/day7.png'
   },
   {
